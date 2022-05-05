@@ -15,7 +15,7 @@ public class ConnectionFactory {
         }
     }
 
-	public static String url = "jdbc:postgresql://mydatabase.cdzgon3wur5c.us-east-1.rds.amazonaws.com:5432/projectone";
+	public static String url = "jdbc:postgresql://"+("Training_DB_Endpoint")+"/projectone";
 	public static String username = System.getenv("Training_DB_Username");
 	public static String password = System.getenv("Training_DB_Password");
 	
