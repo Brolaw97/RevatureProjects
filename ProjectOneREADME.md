@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Here goes your awesome project description!
+A basic Reimbursement full stack application
 
 ## Technologies Used
 
