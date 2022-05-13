@@ -1,0 +1,64 @@
+# Package Files #
+*.jar
+*.war
+*.ear
+
+### NPM ###
+node_modules/
+
+### Gradle ###
+.gradle
+
+
+##Spring Boot##
+
+### Maven ###
+target/
+log/
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+### STS ###
+.apt_generated
+#.classpath #intending to let people import projects a bit easier
+.factorypath
+#.project #intending to let people import projects a bit easier
+.settings
+.springBeans
+Servers/
+.recommenders/
+.metadata/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# System Files
+.DS_Store
+<<<<<<< HEAD
+Thumbs.db
+=======
+Thumbs.db
+>>>>>>> 7c9f8d61d57ab308d58f073da15e7d2d5a0c4ef1
