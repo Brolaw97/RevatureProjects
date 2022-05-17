@@ -2,7 +2,7 @@
 
 ## Project Description
 
-A basic Reimbursement full stack application
+A Payment Reimbursement Application
 
 ## Technologies Used
 
