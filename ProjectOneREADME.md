@@ -8,14 +8,17 @@ A basic Reimbursement full stack application
 
 * Java
 * PostgreSQL
-* JavaScript
+* HTML/CSS/JavaScript
 
 ## Features
 
-List of features ready and TODOs for future development
 * Fully functional Login pages.
 * Separate pages based on type of account logged in.
 * Real time changes to tables based on input.
+
+ToDo:
+* Modals or selectable table rows to make changes instead of a number field
+* Printing the written out status and types instead of the id of the status and type
 
 ## Getting Started
    
