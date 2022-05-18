@@ -2,7 +2,7 @@
 
 ## Project Description
 
-A Avatar the Last Airbended themed Social media platform
+A Avatar the Last Airbender themed Social media platform
 
 ## Technologies Used
 
@@ -26,8 +26,8 @@ A Avatar the Last Airbended themed Social media platform
 * Upload pictures to profile and posts
 
 To-do list:
-* Deploy to cloud server using AWS: EC2
-* Implement Picture storing/sharing using AWS: S3
+* Do more testing
+* Make a working search functionality
 
 ## Getting Started
    
