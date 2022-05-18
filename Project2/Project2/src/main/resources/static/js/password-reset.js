@@ -20,8 +20,11 @@ function submit(){
         document.getElementById("tempPassword").value.length != 0 &&
         document.getElementById("password").value.length != 0 &&
         document.getElementById("passwordTwo").value.length != 0 ){
+
+            let input = document.getElementById("email").value
+           let symbol = "@"
             
-            if(document.getElementById("password").value==document.getElementById("passwordTwo").value){
+            if(document.getElementById("password").value==document.getElementById("passwordTwo").value && input.includes(symbol)){
                 
                buttonEnabler();
             }

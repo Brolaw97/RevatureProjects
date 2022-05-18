@@ -4,16 +4,23 @@ server:
   port: 9099
 spring:
   datasource:
-    url: jdbc:postgresql://mydatabase.cdzgon3wur5c.us-east-1.rds.amazonaws.com:5432/testingProjectTwo
-    username: ${Training_DB_Username}
-    password: ${Training_DB_Password}
+    url: 
+    username: 
+    password: 
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: false
     hibernate:
       ddl-auto: create
-      
+  autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration 
+
+# Code for setting up email capabilities through spring
+# Currently set for gmail, but we can change that or not, its whatever we wanna do.
   mail:
     host: smtp.gmail.com
     port: 587
@@ -28,7 +35,24 @@ spring:
       starttls.enable: true
       ssl.trust: smtp.gmail.com
       
-
+document:
+  bucket-name: avatarimages2005
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    credentials:
+      access-key: 
+      secret-key: 
+      
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+       
     
 # Code for setting up email capabilities through spring
 # Currently set for gmail, but we can change that or not, its whatever we wanna do.

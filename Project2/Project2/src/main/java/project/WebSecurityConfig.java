@@ -20,6 +20,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	Pbkdf2PasswordEncoder encoder;
 	
+	@Autowired
+	LoginSuccessHandler successHandler;
+	
+	/**
+	 * Configures Spring Security with a whitelist of urls accessible to all while restricting all other urls to authorized users.
+	 * Overwrites the default login page and successHandler with custom implementations.
+	 * Utilizes default logout functionality.
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
@@ -27,18 +35,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.csrf().disable()
 			.authorizeRequests()
 				.antMatchers("/", "/html/create-account.html", "/html/reset-password.html", "/html/forgot-password.html", // onto next line
-								"/registeraccount", "/resetpasswordemail", "/resetpassword" ).permitAll()
+								"/registeraccount", "/resetpasswordemail", "/resetpassword", "/img/BenderLogoPostFix.png").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
 				.loginPage("/html/login.html")
-				.defaultSuccessUrl("/html/test.html")
+				.successHandler(successHandler)
 				.permitAll()
 				.and()
 			.logout()
 				.permitAll();
 	}
 	
+	/**
+	 * Configures Spring Security to use jdbc authentication.
+	 * Connects to the preexisting database and is configured to match the schema of that database.
+	 * Uses a password encoder to encode passwords.
+	 */
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication().dataSource(dataSource)
